@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--byName-->
+    <!--<bean id="kenny" class="com.byNamebyTypeyType.Instrumentalist"-->
+                                                                 <!--autowire="byName">-->
+    <!--<property name="song" value="Jingle Bells"/>-->
+
+    <!--&lt;!&ndash;<property name="instrument" ref="saxophone"/>&ndash;&gt;-->
+<!--</bean>-->
+
+    <!--&lt;!&ndash;<bean id="saxophone" class="com.projectt.Saxophone"/>&ndash;&gt;-->
+    <!--<bean id="instrument" class="com.byNamebyTypeyType.Saxophone"/>-->
+    <!--При автоматическом связывании по имени (byName) устанавлива-
+ется соглашение, в соответствии с которым свойство будет автома-
+тически связано с компонентом, имеющим такое же имя. Атрибут
+autowire со значением byName сообщает фреймворку, что необходимо
+просмотреть все свойства компонента kenny и отыскать компоненты с
+соответствующими им именами. В данном случае свойство instrument
+подходит для автоматического связывания через метод записи.
+То есть свойству  private Instrument instrument;  в классе Instrumentalist  будет присвоено  значение  bean id="instrument" class="com.byNamebyTypeyType.Saxophone"  так как у свойства и у бина одинаковые имена. Задокументированные две строчки- это классический аналог без автосвязывания.
+-->
+
+    <!--byType-->
+    <bean id="kenny" class="com.byNameByType.Instrumentalist"
+          autowire="byType">
+        <property name="song" value="Jingle Bells"/>
+
+        <!--<property name="instrument" ref="saxophone"/>-->
+    </bean>
+
+    <!--<bean id="saxophone" class="com.projectt.Saxophone"/>-->
+
+    <bean id="instrument" class="com.byNameByType.Saxophone"/>
+</beans>
+
+<!--Например, предположим, что атрибут autowire компонента kenny
+имеет значение byType. Контейнер попытается отыскать внутри се-
+бя компонент, имеющий тип Instrument, и внедрит его в свойство
+instrument. Как показано на рис. 4.2, компонент saxophone будет авто-
+матически внедрен в свойство instrument компонента kenny, потому
+что и свойство instrument, и компонент saxophone имеют тип Instrument.-->

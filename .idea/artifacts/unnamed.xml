@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="root">
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
+      </element>
+    </root>
+  </artifact>
+</component>

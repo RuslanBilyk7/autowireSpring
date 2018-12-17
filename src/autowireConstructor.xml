@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="duke"
+          class="com.constructor.PoeticJuggler"
+          autowire="constructor">
+        <!--<constructor-arg ref="sonnet29"/>-->
+    </bean>
+
+    <bean id="sonnet29" class="com.constructor.Sonnet29"></bean>
+<!--Из этого нового объявления компонента duke исчезли элемен-
+ты <constructor-arg>, а атрибуту autowire было присвоено значение
+constructor. Это объявление сообщает фреймворку, что он должен
+исследовать конструктор класса PoeticJuggler и попытаться найти
+в конфигурации компоненты, соответствующие аргументам одного
+из конструкторов. В конфигурации уже присутствует определение
+компонента sonnet29, имеющего тип Poem и соответствующего аргу-
+менту одного из конструкторов класса PoeticJuggler. Поэтому для
+создания компонента duke Spring будет использовать этот конструк-
+тор и передаст ему компонент sonnet29-->
+
+
+</beans>
